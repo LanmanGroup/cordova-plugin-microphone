@@ -19,8 +19,19 @@
       [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
     }];
   }
+}
 
-  
+- (void)cameraperm:(CDVInvokedUrlCommand*)command {
+    CDVPluginResult* __block pluginResult = nil;
+    
+    NSString *mediaType = AVMediaTypeVideo;
+    
+    [AVCaptureDevice requestAccessForMediaType:mediaType completionHandler:^(BOOL granted) {
+            pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsBool:granted];
+            [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
+    }];
+
+    
 }
 
 @end
