@@ -18,5 +18,8 @@
     <js-module src="www/ios/microphone.js" name="microphone">
       <clobbers target="navigator.microphone"/>
     </js-module>
+    <js-module src="www/ios/camera.js" name="cameraperm">
+      <clobbers target="navigator.cameraperm"/>
+    </js-module>
   </platform>
 </plugin>
