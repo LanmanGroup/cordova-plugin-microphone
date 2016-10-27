@@ -1,8 +1,6 @@
-cordova.define("com.bandpad.cordova.microphone.cameraperm", function(require, exports, module) {
-  var exec = require('cordova/exec');
+var exec = require('cordova/exec');
   module.exports = function (next) {
     exec(function (granted) {
       next(granted);
     }, null, 'Microphone', 'cameraperm');
-  }; 
-});
+  };
